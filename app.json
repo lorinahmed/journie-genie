@@ -2,7 +2,46 @@
   "expo": {
     "name": "journey-genie",
     "slug": "journey-genie",
-    "version": "1.0.0"
-  },
-  "name": "journey-genie"
+    "version": "1.1.6",
+    "plugins": [
+      [
+        "expo-av",
+        {
+          "microphonePermission": "Allow journey-genie to access your microphone."
+        }
+      ]    ],
+    "android": {
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyDkelj_tk6EI5hvexCcqumlPOnLPplmJpE"
+        }
+      },
+      "package": "com.journeygenie",
+      "icon": "./logo.png",
+      "splash": {
+        "image": "./logo.png",
+        "backgroundColor": "#c955b4"
+      },
+      "permissions": ["BILLING"],
+      "versionCode": 9
+    },
+    "ios": {
+      "config": {
+        "googleMapsApiKey": "AIzaSyDkelj_tk6EI5hvexCcqumlPOnLPplmJpE"
+      },
+      "bundleIdentifier": "com.journeygenie",
+      "icon": "./logo.png",
+      "splash": {
+        "image": "./logo.png",
+        "backgroundColor": "#c955b4"
+      },
+      "buildNumber": "9"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "aef7095c-7616-4a6c-b61c-81bec74b9dc2"
+      }
+    },
+    "owner": "madhavanmalolan"
+  }
 }
