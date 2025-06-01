@@ -30,7 +30,7 @@
     "metro-core": "^0.82.4",
     "metro-runtime": "^0.82.4",
     "metro-source-map": "^0.82.4",
-    "react": "^19.1.0",
+    "react": "^19.0.0",
     "react-native": "^0.79.2",
     "react-native-google-maps-services": "^0.5.1",
     "react-native-maps": "1.18.0",
