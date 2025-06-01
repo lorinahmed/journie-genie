@@ -6,8 +6,6 @@ import FeatherIcons from '@expo/vector-icons/Feather';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Audio } from 'expo-av';
 import * as FileSystem from 'expo-file-system';
-import * as Speech from 'expo-speech';
-import * as SpeechRecognition from 'expo-speech-recognition';
 import axios from 'axios';
 import { getMoreDetails } from '../../intelligence';
 //import { ElevenLabsClient, ElevenLabs } from "elevenlabs";

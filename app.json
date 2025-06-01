@@ -9,7 +9,8 @@
         {
           "microphonePermission": "Allow journey-genie to access your microphone."
         }
-      ]    ],
+      ]
+    ],
     "android": {
       "config": {
         "googleMaps": {
@@ -22,7 +23,9 @@
         "image": "./logo.png",
         "backgroundColor": "#c955b4"
       },
-      "permissions": ["BILLING"],
+      "permissions": [
+        "BILLING"
+      ],
       "versionCode": 9
     },
     "ios": {
