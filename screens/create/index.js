@@ -35,7 +35,7 @@ const CreateScreen = (props) => {
             console.log("creating map ...", JSON.stringify(tour));
             const key = `${tour.title}:::${tour.imageUrl}`;
             await AsyncStorage.setItem(key, JSON.stringify(tour));
-            props.onMapCreated(key);
+            props.onNewMapCreated(key);
             setIsLoading(false);
         } catch (e) {
             alert("Error creating tour. Please try again.");

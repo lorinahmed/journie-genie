@@ -307,7 +307,7 @@ const MapScreen = (props) => {
 
     }, []);
 
-    
+    console.log("Map", map);    
 
     return (
         <View style={styles.container}>
