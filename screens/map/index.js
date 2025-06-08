@@ -183,28 +183,44 @@ const MapScreen = (props) => {
     }
 
     const loadMap = async () => {
-
         try {
             const mapStr = await AsyncStorage.getItem(props.map);
             console.log("Map loaded", mapStr);
-            setMap(JSON.parse(mapStr));
-            mapRef.current = JSON.parse(mapStr);
-            openNearestLocation();
+            if (!mapStr) {
+                console.error("No map data found");
+                props.onBack();
+                return;
+            }
 
+            const parsedMap = JSON.parse(mapStr);
+            if (!parsedMap || !parsedMap.items || !Array.isArray(parsedMap.items)) {
+                console.error("Invalid map data format");
+                props.onBack();
+                return;
+            }
 
+            setMap(parsedMap);
+            mapRef.current = parsedMap;
+
+            // Request location permissions
             let { status } = await Location.requestForegroundPermissionsAsync();
             if (status !== 'granted') {
                 setErrorMsg('Permission to access location was denied');
                 return;
             }
 
+            // Get current location
             let location = await Location.getCurrentPositionAsync({});
             setLocation(location);
-        }
-        catch (error) {
+
+            // Check for nearest location after a short delay
+            setTimeout(() => {
+                openNearestLocation();
+            }, 1000);
+        } catch (error) {
+            console.error("Error loading map:", error);
             props.onBack();
         }
-    
     };
 
     async function startListening() {
@@ -324,9 +340,10 @@ const MapScreen = (props) => {
                     
                     {map.items.map((item, index) => (
                         <Marker
+                            key={`${item.name}-${index}`}
                             coordinate={{
-                            latitude: item.coordinates.lat,
-                            longitude: item.coordinates.lng,
+                                latitude: item.coordinates.lat,
+                                longitude: item.coordinates.lng,
                             }}
                             title={item.name}
                             onPress={() => {
