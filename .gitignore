@@ -1,6 +1,15 @@
 # Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
 .env
 
+# API Keys and Credentials
+*.json
+!package.json
+!package-lock.json
+!app.json
+!eas.json
+!metro.config.json
+!babel.config.json
+
 # dependencies
 node_modules/
 
