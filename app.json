@@ -24,9 +24,18 @@
         "backgroundColor": "#c955b4"
       },
       "permissions": [
-        "BILLING"
+        "BILLING",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "RECORD_AUDIO",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
       ],
-      "versionCode": 9
+      "versionCode": 9,
+      "adaptiveIcon": {
+        "foregroundImage": "./logo.png",
+        "backgroundColor": "#c955b4"
+      }
     },
     "ios": {
       "config": {
